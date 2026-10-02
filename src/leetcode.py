@@ -128,7 +128,7 @@ def count_repeats(xs, x):
     >>> count_repeats([3, 2, 1], 4)
     0
     '''
-    def bottomX(xs, x):
+    def bottom_x(xs, x):
         def helper(lo, hi):
             if lo == hi:
                 return lo
@@ -139,7 +139,7 @@ def count_repeats(xs, x):
                 return helper(mid + 1, hi)
         return helper(0, len(xs))
 
-    def topX(xs, x):
+    def top_x(xs, x):
         def helper(lo, hi):
             if lo == hi:
                 return lo
@@ -150,4 +150,4 @@ def count_repeats(xs, x):
                 return helper(mid + 1, hi)
         return helper(0, len(xs))
 
-    return topX(xs, x) - bottomX(xs, x)
+    return top_x(xs, x) - bottom_x(xs, x)
