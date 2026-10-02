@@ -41,6 +41,7 @@ def find_smallest_positive(xs):
     x = helper(0, len(xs))
     return x if x < len(xs) else None
 
+
 def find_largest_negative(xs, lo=0, hi=None):
     '''
     Assume that xs is a list of numbers sorted from LOWEST to HIGHEST.
@@ -94,6 +95,7 @@ def find_smallest(xs, lo=0, hi=None):
     '''
     if len(xs) == 0:
         return None
+
     def helper(lo, hi):
         if lo == hi:
             return lo
@@ -149,4 +151,3 @@ def count_repeats(xs, x):
         return helper(0, len(xs))
 
     return topX(xs, x) - bottomX(xs, x)
-
