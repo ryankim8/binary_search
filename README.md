@@ -1,6 +1,6 @@
 # Binary Search 
-[![](https://github.com/mikeizbicki/binary_search/workflows/tests_leetcode/badge.svg)](https://github.com/mikeizbicki/binary_search/actions?query=workflow%3Atests_leetcode)
-[![](https://github.com/mikeizbicki/binary_search/workflows/tests_argmin/badge.svg)](https://github.com/mikeizbicki/binary_search/actions?query=workflow%3Atests_argmin)
+[![](https://github.com/ryankim8/binary_search/workflows/tests_leetcode/badge.svg)](https://github.com/ryankim8/binary_search/actions?query=workflow%3Atests_leetcode)
+[![](https://github.com/ryankim8/binary_search/workflows/tests_argmin/badge.svg)](https://github.com/ryankim8/binary_search/actions?query=workflow%3Atests_argmin)
 
 <img src=img/meme.jpg width=400px />
 

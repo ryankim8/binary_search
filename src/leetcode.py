@@ -30,7 +30,16 @@ def find_smallest_positive(xs):
     >>> find_smallest_positive([-3, -2, -1]) is None
     True
     '''
-
+    def helper(lo, hi):
+        if lo == hi:
+            return lo
+        mid = (lo + hi) // 2
+        if xs[mid] <= 0:
+            return helper(mid + 1, hi)
+        else:
+            return helper(lo, mid)
+    x = helper(0, len(xs))
+    return x if x < len(xs) else None
 
 def find_largest_negative(xs, lo=0, hi=None):
     '''
@@ -50,6 +59,16 @@ def find_largest_negative(xs, lo=0, hi=None):
     >>> find_largest_negative([-3, -2, -1])
     2
     '''
+    def helper(lo, hi):
+        if lo == hi:
+            return lo
+        mid = (lo + hi) // 2
+        if xs[mid] >= 0:
+            return helper(lo, mid)
+        else:
+            return helper(mid + 1, hi)
+    x = helper(0, len(xs))
+    return x - 1 if x > 0 else None
 
 
 def find_smallest(xs, lo=0, hi=None):
@@ -73,6 +92,17 @@ def find_smallest(xs, lo=0, hi=None):
     >>> find_smallest([]) is None
     True
     '''
+    if len(xs) == 0:
+        return None
+    def helper(lo, hi):
+        if lo == hi:
+            return lo
+        mid = (lo + hi) // 2
+        if xs[mid] > xs[mid + 1]:
+            return helper(mid + 1, hi)
+        else:
+            return helper(lo, mid)
+    return helper(0, len(xs) - 1)
 
 
 def count_repeats(xs, x):
@@ -96,3 +126,27 @@ def count_repeats(xs, x):
     >>> count_repeats([3, 2, 1], 4)
     0
     '''
+    def bottomX(xs, x):
+        def helper(lo, hi):
+            if lo == hi:
+                return lo
+            mid = (lo + hi) // 2
+            if xs[mid] <= x:
+                return helper(lo, mid)
+            else:
+                return helper(mid + 1, hi)
+        return helper(0, len(xs))
+
+    def topX(xs, x):
+        def helper(lo, hi):
+            if lo == hi:
+                return lo
+            mid = (lo + hi) // 2
+            if xs[mid] < x:
+                return helper(lo, mid)
+            else:
+                return helper(mid + 1, hi)
+        return helper(0, len(xs))
+
+    return topX(xs, x) - bottomX(xs, x)
+
